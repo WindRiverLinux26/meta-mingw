@@ -14,6 +14,8 @@ UPSTREAM_CHECK_REGEX = "mingw-regex-(?P<pver>\d+(\.\d+)+)"
 
 inherit autotools
 
+CFLAGS += "-std=gnu17"
+
 # Specify any options you want to pass to the configure script using EXTRA_OECONF:
 EXTRA_OECONF = ""
 
