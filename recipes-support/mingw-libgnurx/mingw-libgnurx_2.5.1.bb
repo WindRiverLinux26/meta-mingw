@@ -19,4 +19,10 @@ CFLAGS += "-std=gnu17"
 # Specify any options you want to pass to the configure script using EXTRA_OECONF:
 EXTRA_OECONF = ""
 
+do_configure:prepend() {
+    if ! echo ${EXTRA_AUTORECONF} | grep -q "aclocal"; then
+        rm -f aclocal.m4
+    fi
+}
+
 BBCLASSEXTEND = "nativesdk"
