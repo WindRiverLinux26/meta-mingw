@@ -21,7 +21,7 @@ EXTRA_OECONF = ""
 
 do_configure:prepend() {
     if ! echo ${EXTRA_AUTORECONF} | grep -q "aclocal"; then
-        rm -f aclocal.m4
+        rm -f ${S}/aclocal.m4
     fi
 }
 
